@@ -6,7 +6,6 @@ export async function fetchData() {
 		if (error) {
 			throw error;
 		}
-		console.log(data);
 		return data || [];
 	} catch (error: any) {
 		console.error("Error fetching data:", error.message);

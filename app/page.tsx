@@ -4,10 +4,8 @@ import { RecoilRoot } from "recoil";
 
 export default function Home() {
 	return (
-		<RecoilRoot>
-			<main className="">
-				<App />
-			</main>
-		</RecoilRoot>
+		<main>
+			<App />
+		</main>
 	);
 }

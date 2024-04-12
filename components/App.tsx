@@ -9,7 +9,6 @@ const App = () => {
 		const fetchDataFromService = async () => {
 			try {
 				const fetchedData = await fetchData();
-				console.log(fetchedData);
 				setData(fetchedData);
 			} catch (error) {
 				console.log(error);
