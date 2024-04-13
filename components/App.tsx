@@ -19,7 +19,7 @@ const App = () => {
 
 	return (
 		<div>
-			<h2>Data from Supabase</h2>
+			<h2>Engineer Your Future: Explore, Connect, Succeed</h2>
 			<ul>
 				{data.map((item: any) => (
 					<li key={item.id}>{item.title}</li>
