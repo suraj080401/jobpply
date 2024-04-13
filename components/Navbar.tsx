@@ -9,7 +9,7 @@ const righteous = Righteous({ subsets: ["latin"], weight: ["400"] });
 
 const Navbar: React.FC = () => {
 	return (
-		<nav className="flex flex-row justify-between items-center px-6 py-4 bg-white">
+		<nav className="flex h-16 w-full flex-row justify-between items-center px-6 py-4 bg-white">
 			<div className="flex flex-row items-center space-x-2">
 				<div>
 					<Image src={Logo} alt="logo" className="rounded-md md:w-10 w-8" />

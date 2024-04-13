@@ -24,7 +24,7 @@ const NavLinks: React.FC = () => {
 			</Link>
 			<Link
 				href={"/"}
-				className="text-white p-2 text-sm rounded-md bg-mycontrast"
+				className="text-white px-4 py-2 text-sm rounded-md bg-mycontrast hover:bg-transparent hover:text-black transition duration-200 delay-100 ease-in-out border hover:border-black border-white"
 			>
 				Post Job
 			</Link>
