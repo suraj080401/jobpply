@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${poppins.className} h-screen w-screen`}>
+			<body className={`${poppins.className} h-screen w-screen bg-whitesmoke`}>
 				<header>
 					<Navbar />
 				</header>
