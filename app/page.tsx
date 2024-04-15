@@ -4,7 +4,7 @@ import { RecoilRoot } from "recoil";
 
 export default function Home() {
 	return (
-		<main className="flex-grow h-full">
+		<main className="flex-grow scroll-smooth">
 			<App />
 		</main>
 	);
