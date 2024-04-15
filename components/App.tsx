@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { fetchData } from "../utils/services/userData";
+import Home from "./Home";
 
 const App = () => {
 	const [data, setData] = useState<any[]>([]);
@@ -18,13 +19,8 @@ const App = () => {
 	}, []);
 
 	return (
-		<div>
-			<h2>Engineer Your Future: Explore, Connect, Succeed</h2>
-			<ul>
-				{data.map((item: any) => (
-					<li key={item.id}>{item.title}</li>
-				))}
-			</ul>
+		<div className="h-full">
+			<Home />
 		</div>
 	);
 };
