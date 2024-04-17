@@ -21,7 +21,7 @@ const Jumbotron: React.FC = () => {
 					</p>
 				</div>
 			</div>
-			<div className="flex md:flex-row flex-col md:space-x-6 md:space-y-0 space-y-8 items-center bg-mydarkblue bg-opacity-20 md:p-8 p-6 rounded-lg">
+			<div className="flex md:flex-row flex-col md:space-x-6 md:space-y-0 space-y-8 items-center bg-mydarkblue bg-opacity-20 md:p-6 p-6 rounded-xl">
 				<SelectorComp data={allJobRoleData} placeholder="Select your role" />
 				<SelectorComp
 					data={allExperienceData}
