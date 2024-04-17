@@ -27,7 +27,7 @@ const Jumbotron: React.FC = () => {
 					data={allExperienceData}
 					placeholder="Select your experience"
 				/>
-				<Button className="h-[42px] bg-mydarkblue hover:bg-mycontrast">
+				<Button className="h-[42px] bg-mydarkblue hover:bg-transparent hover:text-black transition duration-200 delay-100 ease-in-out border hover:border-black border-mydarkblue">
 					Search
 				</Button>
 			</div>

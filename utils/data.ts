@@ -1,5 +1,5 @@
-import { allJobRole } from "./schema";
-import { allExperience } from "./schema";
+import { allJobRole, allExperience, allNavTabs } from "./schema";
+
 export const allJobRoleData: allJobRole[] = [
 	{
 		key: "frontend",
@@ -63,5 +63,38 @@ export const allExperienceData: allExperience[] = [
 		value: "10+ yrs",
 		min: 10,
 		max: 100,
+	},
+];
+
+export const allNavTabsData: allNavTabs[] = [
+	{
+		keyValue: "home",
+		value: "Home",
+		route: "/",
+	},
+	{
+		keyValue: "job",
+		value: "Jobs",
+		route: "/jobs",
+	},
+	{
+		keyValue: "service",
+		value: "Service",
+		route: "/service",
+	},
+	{
+		keyValue: "about",
+		value: "About",
+		route: "/about",
+	},
+	{
+		keyValue: "contact",
+		value: "Contact",
+		route: "/contact",
+	},
+	{
+		keyValue: "postjob",
+		value: "Post Job",
+		route: "/postjob",
 	},
 ];

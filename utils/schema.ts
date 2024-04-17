@@ -15,3 +15,11 @@ const IallExperience = z.object({
 });
 
 export type allExperience = z.infer<typeof IallExperience>;
+
+const IallNavTabs = z.object({
+	value: z.string(),
+	keyValue: z.string(),
+	route: z.string(),
+});
+
+export type allNavTabs = z.infer<typeof IallNavTabs>;

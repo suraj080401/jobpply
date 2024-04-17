@@ -1,8 +1,10 @@
+"use-client";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RecoilWrapper from "./_recoilwrapper";
 
 export const metadata: Metadata = {
 	title: "Jobpply",
@@ -22,9 +24,11 @@ export default function RootLayout({
 			<body
 				className={`${poppins.className} flex flex-col h-full bg-whitesmoke scroll-smooth`}
 			>
-				<Navbar />
-				{children}
-				<Footer />
+				<RecoilWrapper>
+					<Navbar />
+					{children}
+					<Footer />
+				</RecoilWrapper>
 			</body>
 		</html>
 	);
