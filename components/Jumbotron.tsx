@@ -11,13 +11,14 @@ const Jumbotron: React.FC = () => {
 		>
 			<div>
 				<div>
-					<p className="md:text-sm text-xs font-bold text-mydarkblue text-center">
-						INDIA'S #1 JOB PLATFORM FOR SOFTWARE ENGINEERS
+					<p className="md:text-lg text-sm font-bold text-mydarkblue text-center">
+						There Are <span className="text-mypurple">"670"</span> Postings Here
+						For you!
 					</p>
 				</div>
 				<div className="py-4">
-					<p className="md:text-4xl text-xl text-gray-800 text-center">
-						Elevate Your Engineering Journey: Jobs, Insights, Services
+					<p className="md:text-4xl text-xl text-gray-800 font-bold text-center">
+						Elevate Your Engineering Journey : Jobs, Insights, Services
 					</p>
 				</div>
 			</div>
