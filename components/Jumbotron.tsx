@@ -9,16 +9,15 @@ const Jumbotron: React.FC = () => {
 			className="md:h-[700px] h-[600px] w-full md:p-16 p-6 bg-no-repeat md:bg-bottom bg-bottom flex flex-col items-center md:space-y-16 space-y-4"
 			style={{ backgroundImage: `url('/landing.svg')` }}
 		>
-			<div>
+			<div className="flex flex-col space-y-4">
 				<div>
-					<p className="md:text-lg text-sm font-bold text-mydarkblue text-center">
-						There Are <span className="text-mypurple">"670"</span> Postings Here
-						For you!
+					<p className="md:text-lg text-xs font-bold text-mydarkblue text-center">
+						INDIA'S #1 DESTINATION FOR SOFTWARE ENGINEERS
 					</p>
 				</div>
 				<div className="py-4">
-					<p className="md:text-4xl text-xl text-gray-800 font-bold text-center">
-						Elevate Your Engineering Journey : Jobs, Insights, Services
+					<p className="md:text-5xl text-xl text-gray-800 font-bold text-center">
+						Discover Jobs, Hackathons, and Valuable Insights!
 					</p>
 				</div>
 			</div>
