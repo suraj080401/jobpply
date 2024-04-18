@@ -1,11 +1,11 @@
 "use client";
-import App from "@/components/App";
-import { RecoilRoot } from "recoil";
+
+import HomeComp from "@/components/ComponentRoutes/HomeComp";
 
 export default function Home() {
 	return (
-		<main className="flex-grow scroll-smooth">
-			<App />
+		<main className="flex-grow h-full scroll-smooth">
+			<HomeComp />
 		</main>
 	);
 }

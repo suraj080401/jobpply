@@ -55,7 +55,7 @@ const config = {
 				mydarkblue: "#4B49AC",
 				mylightblue: "#98BDFF",
 				myblue: "#7DAOFA",
-				mypurple: "#797859",
+				mypurple: "#7978E9",
 				mycontrast: "#F3797E",
 				whitesmoke: "#f5f5f5",
 			},

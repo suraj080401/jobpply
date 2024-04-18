@@ -1,33 +1,45 @@
 import Link from "next/link";
 import React from "react";
+import { allNavTabs } from "@/utils/schema";
+import { useRecoilState } from "recoil";
+import { currNavTabAtom } from "@/atoms/atoms";
 
-const NavLinks: React.FC = () => {
+interface INavLinksProps {
+	route: string;
+	value: string;
+	keyValue: string;
+}
+
+const NavLinks: React.FC<INavLinksProps> = ({ route, value, keyValue }) => {
+	const [currNavTabState, setCurrNavTabState] = useRecoilState(currNavTabAtom);
+
 	return (
-		<div className="flex md:flex-row flex-col md:justify-between md:items-center md:space-x-4 md:space-y-0 space-y-4">
-			<Link
-				href={"/"}
-				className="text-themecolor py-1 px-2 text-sm rounded-md bg-mydarkblue text-white"
-			>
-				Home
-			</Link>
-			<Link href={"/"} className="text-themecolor py-1 px-2 text-sm rounded-md">
-				Jobs
-			</Link>
-			<Link href={"/"} className="text-themecolor py-1 px-2 text-sm rounded-md">
-				Service
-			</Link>
-			<Link href={"/"} className="text-themecolor py-1 px-2 text-sm rounded-md">
-				About
-			</Link>
-			<Link href={"/"} className="text-themecolor py-1 px-2 text-sm rounded-md">
-				Contact
-			</Link>
-			<Link
-				href={"/"}
-				className="text-white px-4 py-2 text-sm rounded-md bg-mycontrast hover:bg-transparent hover:text-black transition duration-200 delay-100 ease-in-out border hover:border-black border-white"
-			>
-				Post Job
-			</Link>
+		<div className="">
+			{keyValue === "postjob" ? (
+				<Link
+					href={"/"}
+					onClick={() => setCurrNavTabState(keyValue)}
+					className={`${
+						currNavTabState === "postjob"
+							? "text-white bg-mydarkblue hover:bg-mydarkblue hover:text-white"
+							: ""
+					} text-white px-4 py-2 text-sm rounded-md bg-mycontrast hover:bg-transparent hover:text-black transition duration-200 delay-100 ease-in-out border hover:border-black border-white`}
+				>
+					Post Job
+				</Link>
+			) : (
+				<Link
+					href={route}
+					onClick={() => setCurrNavTabState(keyValue)}
+					className={`${
+						currNavTabState === keyValue
+							? "text-white bg-mydarkblue"
+							: "text-mydarkblue"
+					} py-1 px-2 text-sm rounded-md`}
+				>
+					{value}
+				</Link>
+			)}
 		</div>
 	);
 };
