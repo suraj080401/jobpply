@@ -2,6 +2,7 @@ import React from "react";
 import SelectorComp from "./SelectorComp";
 import { allJobRoleData, allExperienceData } from "@/utils/data";
 import { Button } from "./ui/button";
+import { Separator } from "./ui/separator";
 
 const Jumbotron: React.FC = () => {
 	return (

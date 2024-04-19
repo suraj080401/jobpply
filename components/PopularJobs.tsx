@@ -8,6 +8,7 @@ import {
 	PiUserFocusThin,
 	PiCodeLight,
 } from "react-icons/pi";
+import { Separator } from "./ui/separator";
 
 const PopularJobs: React.FC = () => {
 	return (
@@ -50,6 +51,7 @@ const PopularJobs: React.FC = () => {
 					count={11}
 				/>
 			</div>
+			<Separator />
 		</div>
 	);
 };

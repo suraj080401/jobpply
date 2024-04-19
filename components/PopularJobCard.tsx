@@ -19,7 +19,7 @@ const PopularJobCard: React.FC<IPopularJobCard> = ({
 		<div
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
-			className="flex md:flex-row flex-col md:p-4 pb-2 px border border-gray-300 bg-white rounded-xl md:space-x-4 space-x-0 md:space-y-0 space-y-2 w-full hover:cursor-pointer hover:scale-105 transition duration-200 delay-100 ease-in-out"
+			className="flex md:flex-row flex-col md:p-4 pb-2 px border border-gray-300 bg-white rounded-xl md:space-x-4 space-x-0 md:space-y-0 space-y-2 w-full hover:cursor-pointer md:hover:scale-105 transition duration-200 delay-100 ease-in-out"
 		>
 			<div
 				className={`${
