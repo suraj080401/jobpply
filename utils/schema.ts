@@ -1,3 +1,4 @@
+import React from "react";
 import { z } from "zod";
 
 const IallJobRole = z.object({
@@ -23,3 +24,14 @@ const IallNavTabs = z.object({
 });
 
 export type allNavTabs = z.infer<typeof IallNavTabs>;
+
+const ItopTenJobs = z.object({
+	role: z.string(),
+	location: z.string(),
+	salary: z.string(),
+	company: z.string(),
+	keywords: z.array(z.string()),
+	logoURL: z.string(),
+});
+
+export type topTenJobs = z.infer<typeof ItopTenJobs>;

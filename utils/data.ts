@@ -1,4 +1,4 @@
-import { allJobRole, allExperience, allNavTabs } from "./schema";
+import { allJobRole, allExperience, allNavTabs, topTenJobs } from "./schema";
 
 export const allJobRoleData: allJobRole[] = [
 	{
@@ -96,5 +96,48 @@ export const allNavTabsData: allNavTabs[] = [
 		keyValue: "postjob",
 		value: "Post Job",
 		route: "/postjob",
+	},
+];
+
+export const topTenJobsData: topTenJobs[] = [
+	{
+		role: "Frontend Developer",
+		location: "Hyderabad",
+		salary: "10-14",
+		company: "Google",
+		keywords: ["Fulltime", "Urgent"],
+		logoURL: "https://logo.clearbit.com/www.google.com",
+	},
+	{
+		role: "Data Analyst",
+		location: "Gurgaon",
+		salary: "8-11",
+		company: "Oracle",
+		keywords: ["Fulltime", "Urgent"],
+		logoURL: "https://logo.clearbit.com/www.oracle.com",
+	},
+	{
+		role: "Fullstack Developer",
+		location: "Hyderabad",
+		salary: "25-30",
+		company: "Microsoft",
+		keywords: ["Fulltime", "Urgent"],
+		logoURL: "https://logo.clearbit.com/www.microsoft.com",
+	},
+	{
+		role: "Database Developer",
+		location: "Bengaluru",
+		salary: "15-18",
+		company: "Netflix",
+		keywords: ["Fulltime", "Urgent"],
+		logoURL: "https://logo.clearbit.com/www.netflix.com",
+	},
+	{
+		role: "Backend Developer",
+		location: "Noida",
+		salary: "11-15",
+		company: "Adobe",
+		keywords: ["Fulltime", "Urgent"],
+		logoURL: "https://logo.clearbit.com/www.adobe.com",
 	},
 ];
