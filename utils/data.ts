@@ -1,4 +1,10 @@
-import { allJobRole, allExperience, allNavTabs, topTenJobs } from "./schema";
+import {
+	allJobRole,
+	allExperience,
+	allNavTabs,
+	topTenJobs,
+	hackathonList,
+} from "./schema";
 
 export const allJobRoleData: allJobRole[] = [
 	{
@@ -139,5 +145,50 @@ export const topTenJobsData: topTenJobs[] = [
 		company: "Adobe",
 		keywords: ["Fulltime", "Urgent"],
 		logoURL: "https://logo.clearbit.com/www.adobe.com",
+	},
+];
+
+export const hackathonListData: hackathonList[] = [
+	{
+		title: "Summer Hack 1.0",
+		prize: "$300",
+		location: "New Delhi, India",
+		reg_start: "01 MARCH 2024",
+		reg_end: "23 APRIL 2024",
+	},
+	{
+		title: "HackFest'24",
+		prize: "$1,440",
+		location: "Gorakhpur, India",
+		reg_start: "06 APRIL 2024",
+		reg_end: "20 APRIL 2024",
+	},
+	{
+		title: "ETHDubai 2024 Hackathon",
+		prize: "$25,000",
+		location: "Online",
+		reg_start: "19 MARCH 2024",
+		reg_end: "21 APRIL 2024",
+	},
+	{
+		title: "Summer Hack 1.0",
+		prize: "$300",
+		location: "New Delhi, India",
+		reg_start: "01 MARCH 2024",
+		reg_end: "23 APRIL 2024",
+	},
+	{
+		title: "Hacknology 2024",
+		prize: "$300",
+		location: "Online",
+		reg_start: "11 APRIL 2024",
+		reg_end: "22 APRIL 2024",
+	},
+	{
+		title: "GLB HACKATHON 3.O",
+		prize: "$603",
+		location: "Greater Noida, India",
+		reg_start: "22 MARCH 2024",
+		reg_end: "25 APRIL 2024",
 	},
 ];

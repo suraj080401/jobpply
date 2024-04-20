@@ -35,3 +35,13 @@ const ItopTenJobs = z.object({
 });
 
 export type topTenJobs = z.infer<typeof ItopTenJobs>;
+
+const IhackathonList = z.object({
+	title: z.string(),
+	location: z.string(),
+	prize: z.string(),
+	reg_start: z.string(),
+	reg_end: z.string(),
+});
+
+export type hackathonList = z.infer<typeof IhackathonList>;

@@ -14,7 +14,7 @@ const TopJobCard: React.FC<topTenJobs> = ({
 	logoURL,
 }) => {
 	return (
-		<div className="p-4 border border-2 rounded-lg bg-white flex lg:flex-row flex-col lg:space-x-4 lg:space-y-0 space-y-2 hover:cursor-pointer">
+		<div className="p-4 mx-2 border border-2 rounded-lg bg-white flex lg:flex-row flex-col lg:space-x-4 lg:space-y-0 space-y-2 hover:cursor-pointer hover:border-mydarkblue transition duration-200 delay-100 ease-in-out">
 			<div className="rounded-md flex flex-row justify-center">
 				<div className="bg-whitesmoke p-2 h-16 rounded-lg">
 					<img src={logoURL} alt="logo" className="w-12 h-12 rounded-md" />
