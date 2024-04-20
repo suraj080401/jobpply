@@ -12,7 +12,8 @@ import { Separator } from "./ui/separator";
 
 const PopularJobs: React.FC = () => {
 	return (
-		<div className="flex flex-col md:p-16 p-8 md:space-y-16 space-y-8">
+		<div className="flex flex-col md:p-16 py-12 px-8  md:space-y-16 space-y-8">
+			<Separator />
 			<div className="flex flex-col space-y-4">
 				<div className="text-center">
 					<p className="md:text-3xl text-xl">Popular Job Categories</p>

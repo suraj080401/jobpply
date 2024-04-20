@@ -8,10 +8,11 @@ import {
 } from "./ui/carousel";
 import { topTenJobsData } from "@/utils/data";
 import TopJobCard from "./TopJobCard";
+import { Separator } from "./ui/separator";
 
 const TopJobsComp: React.FC = () => {
 	return (
-		<div className="flex flex-col">
+		<div className="flex flex-col md:px-16 px-8">
 			<div className="flex flex-col items-center md:py-4 md:px-16 px-8 py-2 md:space-y-16 space-y-8">
 				<div className="flex flex-col space-y-4 ">
 					<div className="text-center">
@@ -24,7 +25,7 @@ const TopJobsComp: React.FC = () => {
 					</div>
 				</div>
 			</div>
-			<div className="px-16 py-8">
+			<div className="py-8 px-8">
 				<Carousel className="w-full">
 					<CarouselContent className="-ml-1">
 						{topTenJobsData.map((item, index) => (
@@ -44,6 +45,7 @@ const TopJobsComp: React.FC = () => {
 					<CarouselNext />
 				</Carousel>
 			</div>
+			<Separator className="my-4" />
 		</div>
 	);
 };
