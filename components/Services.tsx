@@ -1,6 +1,7 @@
 import React from "react";
 import ServiceCard from "./ServiceCard";
 import { ourServiceData } from "@/utils/data";
+import { Separator } from "./ui/separator";
 
 const Services: React.FC = () => {
 	return (
@@ -13,6 +14,7 @@ const Services: React.FC = () => {
 					return <ServiceCard item={item} key={key} />;
 				})}
 			</div>
+			<Separator />
 		</div>
 	);
 };

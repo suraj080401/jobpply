@@ -10,6 +10,7 @@ import {
 import { FaCheck } from "react-icons/fa6";
 import Image from "next/image";
 import { ourServices } from "@/utils/schema";
+import { Button } from "./ui/button";
 
 interface IServiceCardProps {
 	item: ourServices;
@@ -44,7 +45,9 @@ const ServiceCard: React.FC<IServiceCardProps> = ({ item }) => {
 				})}
 			</CardContent>
 			<CardFooter>
-				<p>Card Footer</p>
+				<button className="rounded-md text-white md:text-md md:p-2 text-xs py-1 px-2 bg-mydarkblue hover:bg-mycontrast font-light">
+					Know More
+				</button>
 			</CardFooter>
 		</Card>
 	);
