@@ -5,6 +5,7 @@ import TopJobsComp from "../TopJobsComp";
 import HackathonsList from "../HackathonsList";
 import BussinesNumbers from "../BussinesNumbers";
 import Services from "../Services";
+import RecruiterNotice from "../RecruiterNotice";
 
 const HomeComp: React.FC = () => {
 	return (
@@ -13,10 +14,9 @@ const HomeComp: React.FC = () => {
 			<PopularJobs />
 			<TopJobsComp />
 			<HackathonsList />
-			<div className="flex flex-col my-8">
-				<Services />
-				<BussinesNumbers />
-			</div>
+			<Services />
+			<RecruiterNotice />
+			<BussinesNumbers />
 		</div>
 	);
 };
