@@ -22,7 +22,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${poppins.className} flex flex-col h-full bg-whitesmoke scroll-smooth`}
+				className={`${poppins.className} flex flex-col h-full bg-mydarkblue bg-opacity-5 scroll-smooth`}
 			>
 				<RecoilWrapper>
 					<Navbar />

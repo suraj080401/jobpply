@@ -4,6 +4,7 @@ import {
 	allNavTabs,
 	topTenJobs,
 	hackathonList,
+	ourServices,
 } from "./schema";
 
 export const allJobRoleData: allJobRole[] = [
@@ -190,5 +191,80 @@ export const hackathonListData: hackathonList[] = [
 		location: "Greater Noida, India",
 		reg_start: "22 MARCH 2024",
 		reg_end: "25 APRIL 2024",
+	},
+];
+
+export const ourServiceData: ourServices[] = [
+	{
+		title: "Resume Review Service",
+		keywords: [
+			"Professional feedback",
+			"Optimization",
+			"Tailored advice",
+			"Increased visibility",
+			"Expert insights",
+		],
+		uni_key: "resumereview",
+		route: "resumereview",
+	},
+	{
+		title: "Resume Writing Service",
+		keywords: [
+			"Professional writing",
+			"Customization",
+			"Industry-specific",
+			"Highlight achievements",
+			"ATS Friendly",
+		],
+		uni_key: "resumewriting",
+		route: "resumewriting",
+	},
+	{
+		title: "Interview Preparation Workshops",
+		keywords: [
+			"Confidence building",
+			"Practice",
+			"Effective strategies",
+			"Mock interviews",
+			"Confidence boost",
+		],
+		uni_key: "interview",
+		route: "interview",
+	},
+	{
+		title: "Skill Assessment Tests",
+		keywords: [
+			"Skill verification",
+			"Instant results",
+			"Proficiency assessment",
+			"Verified skills",
+			"Comprehensive library",
+		],
+		uni_key: "skilltest",
+		route: "skilltest",
+	},
+	{
+		title: "Tech Training Courses",
+		keywords: [
+			"Expert-led",
+			"On-demand",
+			"Practical lessons",
+			"Flexibility",
+			"Career advancement",
+		],
+		uni_key: "techtraining",
+		route: "techtraining",
+	},
+	{
+		title: "Freelancer Success Coaching",
+		keywords: [
+			"Personalized coaching",
+			"Goal setting",
+			"Lead Generation",
+			"Overcoming challenges",
+			"Industry success focus",
+		],
+		uni_key: "freelancercoaching",
+		route: "freelancercoaching",
 	},
 ];
