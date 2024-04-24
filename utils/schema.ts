@@ -45,3 +45,12 @@ const IhackathonList = z.object({
 });
 
 export type hackathonList = z.infer<typeof IhackathonList>;
+
+const IOurServices = z.object({
+	title: z.string(),
+	keywords: z.array(z.string()),
+	route: z.string(),
+	uni_key: z.string(),
+});
+
+export type ourServices = z.infer<typeof IOurServices>;

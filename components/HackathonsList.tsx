@@ -73,6 +73,7 @@ const HackathonsList: React.FC = () => {
 					<CarouselNext />
 				</Carousel>
 			</div>
+			<Separator className="md:mt-12 mt-6" />
 		</div>
 	);
 };
