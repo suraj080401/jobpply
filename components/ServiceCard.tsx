@@ -26,6 +26,7 @@ const ServiceCard: React.FC<IServiceCardProps> = ({ item }) => {
 						alt="resumereview"
 						width={180}
 						height={180}
+						className="w-full h-auto"
 					/>
 				</div>
 				<CardTitle className="text-mydarkblue text-xs md:text-lg lg:text-lg xl:text-xl text-center md:text-start">
