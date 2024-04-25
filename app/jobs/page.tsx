@@ -21,7 +21,7 @@ export default function Jobs() {
 				</div>
 				<div>
 					<p className="md:text-sm text-xs">
-						Use our advance filter to match the best job for you
+						Use our advance filters to match the best job for you
 					</p>
 				</div>
 			</div>

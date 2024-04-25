@@ -68,16 +68,20 @@ export function DataTable<TData, TValue>({
 	});
 
 	return (
-		<div className="space-y-4 md:p-8 p-2 rounded-md">
+		<div className="space-y-4 md:p-8 p-2 md:pt-0 rounded-md ">
 			<DataTableToolbar table={table} />
 			<div className="rounded-md border bg-white">
 				<Table>
-					<TableHeader>
+					<TableHeader className="bg-mylightblue bg-opacity-30">
 						{table.getHeaderGroups().map((headerGroup) => (
 							<TableRow key={headerGroup.id}>
 								{headerGroup.headers.map((header) => {
 									return (
-										<TableHead key={header.id} colSpan={header.colSpan}>
+										<TableHead
+											className="text-black"
+											key={header.id}
+											colSpan={header.colSpan}
+										>
 											{header.isPlaceholder
 												? null
 												: flexRender(
@@ -96,6 +100,7 @@ export function DataTable<TData, TValue>({
 								<TableRow
 									key={row.id}
 									data-state={row.getIsSelected() && "selected"}
+									className="hover:bg-mydarkblue hover:bg-opacity-10"
 								>
 									{row.getVisibleCells().map((cell) => (
 										<TableCell key={cell.id}>

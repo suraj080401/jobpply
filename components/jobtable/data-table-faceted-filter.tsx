@@ -59,7 +59,7 @@ export function DataTableFacetedFilter<TData, TValue>({
 									</Badge>
 								) : (
 									options
-										.filter((option) => selectedValues.has(option.key))
+										.filter((option) => selectedValues.has(option.value))
 										.map((option) => (
 											<Badge
 												variant="secondary"
@@ -75,22 +75,22 @@ export function DataTableFacetedFilter<TData, TValue>({
 					)}
 				</Button>
 			</PopoverTrigger>
-			<PopoverContent className="md:w-[200px] w-[300px] p-0" align="start">
+			<PopoverContent className="md:w-[250px] w-[300px] p-0" align="start">
 				<Command>
 					<CommandInput placeholder={title} />
 					<CommandList>
 						<CommandEmpty>No results found.</CommandEmpty>
 						<CommandGroup>
 							{options.map((option) => {
-								const isSelected = selectedValues.has(option.key);
+								const isSelected = selectedValues.has(option.value);
 								return (
 									<CommandItem
 										key={option.key}
 										onSelect={() => {
 											if (isSelected) {
-												selectedValues.delete(option.key);
+												selectedValues.delete(option.value);
 											} else {
-												selectedValues.add(option.key);
+												selectedValues.add(option.value);
 											}
 											const filterValues = Array.from(selectedValues);
 											column?.setFilterValue(
@@ -109,9 +109,9 @@ export function DataTableFacetedFilter<TData, TValue>({
 											<CheckIcon className={cn("h-4 w-4")} />
 										</div>
 										<span>{option.value}</span>
-										{facets?.get(option.key) && (
+										{facets?.get(option.value) && (
 											<span className="ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs">
-												{facets.get(option.key)}
+												{facets.get(option.value)}
 											</span>
 										)}
 									</CommandItem>

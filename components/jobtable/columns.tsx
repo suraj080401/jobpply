@@ -7,30 +7,19 @@ import { Button } from "../ui/button";
 
 export const columns: ColumnDef<Jobs>[] = [
 	{
-		accessorKey: "logo",
-		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="" className="hidden" />
-		),
-		cell: ({ row }) => {
-			return <div className="hidden"></div>;
-		},
-	},
-	{
-		accessorKey: "company",
-		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Company" />
-		),
-		cell: ({ row }) => {
-			return (
-				<div className="flex flex-row items-center space-x-4">
-					<div>
-						<img src={`${row.getValue("logo")}`} className="w-6 h-6" />
-					</div>
-					<div>{row.getValue("company")}</div>
+		accessorFn: (row) => (
+			<div className="flex flex-row items-center space-x-2 w-24">
+				<div>
+					<img src={`${row.logo}`} className="w-6 h-6" alt="logo" />
 				</div>
-			);
-		},
+				<div>{row.company}</div>
+			</div>
+		),
+		id: "company",
+		header: "Company",
+		cell: (info) => info.getValue(),
 	},
+
 	{
 		accessorKey: "role",
 		header: ({ column }) => (
@@ -39,8 +28,8 @@ export const columns: ColumnDef<Jobs>[] = [
 		cell: ({ row }) => {
 			return <div className="flex">{row.getValue("role")}</div>;
 		},
-		filterFn: (row, value) => {
-			return value.includes(row.getValue("role"));
+		filterFn: (row, id, value) => {
+			return value.includes(row.getValue(id));
 		},
 	},
 	{
@@ -60,8 +49,9 @@ export const columns: ColumnDef<Jobs>[] = [
 		cell: ({ row }) => {
 			return <div className="flex">{row.getValue("experience")}</div>;
 		},
-		filterFn: (row, value) => {
-			return value.includes(row.getValue("experience"));
+		filterFn: (row, id, value) => {
+			console.log(row, row.getValue(id), value);
+			return value.includes(row.getValue(id));
 		},
 	},
 	{
@@ -79,7 +69,7 @@ export const columns: ColumnDef<Jobs>[] = [
 			<DataTableColumnHeader column={column} title="Salary" />
 		),
 		cell: ({ row }) => {
-			return <div className="flex">{row.getValue("salary")}</div>;
+			return <div className="flex">{`${row.getValue("salary")} LPA`}</div>;
 		},
 	},
 	{
