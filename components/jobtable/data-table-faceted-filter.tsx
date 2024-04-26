@@ -16,6 +16,8 @@ import {
 } from "../ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Separator } from "../ui/separator";
+import { useRecoilState } from "recoil";
+import { currMode, globalRoleFilter } from "@/atoms/atoms";
 
 interface DataTableFacetedFilterProps<TData, TValue> {
 	column?: Column<TData, TValue>;
@@ -33,6 +35,15 @@ export function DataTableFacetedFilter<TData, TValue>({
 }: DataTableFacetedFilterProps<TData, TValue>) {
 	const facets = column?.getFacetedUniqueValues();
 	const selectedValues = new Set(column?.getFilterValue() as string[]);
+	const [currRoleState, setcurrRoleState] = useRecoilState(globalRoleFilter);
+
+	React.useEffect(() => {
+		if (title === "Role" && currRoleState) {
+			selectedValues.add(currRoleState);
+			const filterValues = Array.from(selectedValues);
+			column?.setFilterValue(filterValues.length ? filterValues : undefined);
+		}
+	}, []);
 
 	return (
 		<Popover>

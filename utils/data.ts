@@ -22,8 +22,8 @@ export const allJobRoleData: allJobRole[] = [
 		value: "FullStack Developer",
 	},
 	{
-		key: "database",
-		value: "Database Developer",
+		key: "application",
+		value: "Application Developer",
 	},
 	{
 		key: "software",

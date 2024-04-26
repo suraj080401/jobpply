@@ -27,15 +27,7 @@ export function DataTableToolbar<TData>({
 					onChange={(event) =>
 						table.getColumn("skills")?.setFilterValue(event.target.value)
 					}
-					className="h-8 md:w-64 w-full"
-				/>
-				<Input
-					placeholder="Search Company"
-					value={(table.getColumn("company")?.getFilterValue() as string) ?? ""}
-					onChange={(event) =>
-						table.getColumn("company")?.setFilterValue(event.target.value)
-					}
-					className="h-8 md:w-64 w-full"
+					className="h-8 md:w-72 w-full"
 				/>
 				{table.getColumn("role") && (
 					<DataTableFacetedFilter

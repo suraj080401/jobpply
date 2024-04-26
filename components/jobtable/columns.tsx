@@ -19,7 +19,6 @@ export const columns: ColumnDef<Jobs>[] = [
 		header: "Company",
 		cell: (info) => info.getValue(),
 	},
-
 	{
 		accessorKey: "role",
 		header: ({ column }) => (
@@ -31,6 +30,7 @@ export const columns: ColumnDef<Jobs>[] = [
 		filterFn: (row, id, value) => {
 			return value.includes(row.getValue(id));
 		},
+		enableSorting: false,
 	},
 	{
 		accessorKey: "location",
@@ -40,6 +40,7 @@ export const columns: ColumnDef<Jobs>[] = [
 		cell: ({ row }) => {
 			return <div className="flex">{row.getValue("location")}</div>;
 		},
+		enableSorting: false,
 	},
 	{
 		accessorKey: "experience",
@@ -50,9 +51,9 @@ export const columns: ColumnDef<Jobs>[] = [
 			return <div className="flex">{row.getValue("experience")}</div>;
 		},
 		filterFn: (row, id, value) => {
-			console.log(row, row.getValue(id), value);
 			return value.includes(row.getValue(id));
 		},
+		enableSorting: false,
 	},
 	{
 		accessorKey: "skills",
@@ -62,6 +63,7 @@ export const columns: ColumnDef<Jobs>[] = [
 		cell: ({ row }) => {
 			return <div className="flex">{row.getValue("skills")}</div>;
 		},
+		enableSorting: false,
 	},
 	{
 		accessorKey: "salary",
@@ -80,6 +82,7 @@ export const columns: ColumnDef<Jobs>[] = [
 		cell: ({ row }) => {
 			return <div className="flex">{row.getValue("dateadded")}</div>;
 		},
+		enableSorting: false,
 	},
 	{
 		accessorKey: "id",

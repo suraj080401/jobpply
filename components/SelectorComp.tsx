@@ -16,7 +16,11 @@ interface ISelectorComp {
 
 const SelectorComp: React.FC<ISelectorComp> = ({ data, placeholder }) => {
 	return (
-		<Select>
+		<Select
+			onValueChange={(event) => {
+				console.log(event);
+			}}
+		>
 			<SelectTrigger className="w-[300px] h-12 focus:ring-0 focus:ring-none focus:ring-offset-0">
 				<SelectValue placeholder={placeholder} />
 			</SelectTrigger>

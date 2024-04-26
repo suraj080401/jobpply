@@ -2,11 +2,11 @@ import React from "react";
 import PopularJobCard from "./PopularJobCard";
 import {
 	PiCodeBlockThin,
-	PiAndroidLogoThin,
-	PiDatabaseThin,
 	PiGraphThin,
 	PiUserFocusThin,
-	PiCodeLight,
+	PiPresentationChartThin,
+	PiAndroidLogoThin,
+	PiCloudCheckLight,
 } from "react-icons/pi";
 import { Separator } from "./ui/separator";
 
@@ -26,28 +26,28 @@ const PopularJobs: React.FC = () => {
 			</div>
 			<div className="grid md:grid-cols-2 grid-cols-2 lg:grid-cols-3 grid-flow-row md:gap-8 gap-2">
 				<PopularJobCard
-					title={"Website Developer"}
+					title={"Frontend Developer"}
 					logo={PiCodeBlockThin}
 					count={23}
 				/>
 				<PopularJobCard
-					title={"Android Developer"}
-					logo={PiAndroidLogoThin}
+					title={"Backend Developer"}
+					logo={PiCloudCheckLight}
 					count={12}
 				/>
 				<PopularJobCard
-					title={"Database Developer"}
-					logo={PiDatabaseThin}
+					title={"Fullstack Developer"}
+					logo={PiPresentationChartThin}
 					count={43}
 				/>
 				<PopularJobCard title={"Data Analyst"} logo={PiGraphThin} count={14} />
 				<PopularJobCard
-					title={"Software General"}
-					logo={PiCodeLight}
+					title={"Application Developer"}
+					logo={PiAndroidLogoThin}
 					count={16}
 				/>
 				<PopularJobCard
-					title={"Manager Profile"}
+					title={"Data Science"}
 					logo={PiUserFocusThin}
 					count={11}
 				/>
