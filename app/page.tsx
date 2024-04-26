@@ -1,6 +1,6 @@
 "use client";
 
-import HomeComp from "@/components/ComponentRoutes/HomeComp";
+import HomeComp from "@/components/componentroutes/HomeComp";
 
 export default function Home() {
 	return (

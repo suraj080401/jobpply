@@ -1,6 +1,9 @@
 "use client";
 
+import { globalExperienceFilter, globalRoleFilter } from "@/atoms/atoms";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { useRecoilState } from "recoil";
 
 interface IPopularJobCard {
 	title: string;
@@ -14,11 +17,25 @@ const PopularJobCard: React.FC<IPopularJobCard> = ({
 	count,
 }) => {
 	const [isHovered, setIsHovered] = useState<boolean>(false);
+	const [currRoleState, setcurrRoleState] = useRecoilState(globalRoleFilter);
+	const [currExperienceState, setcurrExperienceState] = useRecoilState(
+		globalExperienceFilter,
+	);
+	const router = useRouter();
+
+	const visitJobTab = () => {
+		setcurrRoleState(title);
+		setcurrExperienceState("");
+		router.push("/jobs");
+	};
 
 	return (
 		<div
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
+			onClick={() => {
+				visitJobTab();
+			}}
 			className="flex md:flex-row flex-col md:p-4 pb-2 border border-gray-300 bg-white rounded-xl md:space-x-4 space-x-0 md:space-y-0 space-y-2 w-full hover:cursor-pointer md:hover:scale-105 hover:border-mydarkblue transition duration-200 delay-100 ease-in-out"
 		>
 			<div

@@ -10,8 +10,6 @@ export type allJobRole = z.infer<typeof IallJobRole>;
 
 const IallExperience = z.object({
 	value: z.string(),
-	min: z.number(),
-	max: z.number(),
 	key: z.string(),
 });
 
@@ -54,3 +52,16 @@ const IOurServices = z.object({
 });
 
 export type ourServices = z.infer<typeof IOurServices>;
+
+export const jobSchema = z.object({
+	logo: z.string(),
+	company: z.string(),
+	role: z.string(),
+	location: z.string(),
+	experience: z.string(),
+	skills: z.string(),
+	salary: z.string(),
+	dateadded: z.string(),
+});
+
+export type Jobs = z.infer<typeof jobSchema>;

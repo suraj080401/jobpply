@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { fetchData } from "../utils/services/userData";
-import Home from "./ComponentRoutes/HomeComp";
+import Home from "./componentroutes/HomeComp";
 
 const App = () => {
 	const [data, setData] = useState<any[]>([]);
