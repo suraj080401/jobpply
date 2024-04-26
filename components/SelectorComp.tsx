@@ -12,13 +12,18 @@ import { allJobRole } from "@/utils/schema";
 interface ISelectorComp {
 	data: allJobRole[];
 	placeholder: string;
+	setterFunction: Function;
 }
 
-const SelectorComp: React.FC<ISelectorComp> = ({ data, placeholder }) => {
+const SelectorComp: React.FC<ISelectorComp> = ({
+	data,
+	placeholder,
+	setterFunction,
+}) => {
 	return (
 		<Select
 			onValueChange={(event) => {
-				console.log(event);
+				setterFunction(event);
 			}}
 		>
 			<SelectTrigger className="w-[300px] h-12 focus:ring-0 focus:ring-none focus:ring-offset-0">
@@ -27,7 +32,7 @@ const SelectorComp: React.FC<ISelectorComp> = ({ data, placeholder }) => {
 			<SelectContent>
 				{data.map((item, i) => {
 					return (
-						<SelectItem value={item.key} key={i}>
+						<SelectItem value={item.value} key={i}>
 							{item.value}
 						</SelectItem>
 					);

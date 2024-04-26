@@ -17,7 +17,7 @@ import {
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Separator } from "../ui/separator";
 import { useRecoilState } from "recoil";
-import { currMode, globalRoleFilter } from "@/atoms/atoms";
+import { globalExperienceFilter, globalRoleFilter } from "@/atoms/atoms";
 
 interface DataTableFacetedFilterProps<TData, TValue> {
 	column?: Column<TData, TValue>;
@@ -36,12 +36,33 @@ export function DataTableFacetedFilter<TData, TValue>({
 	const facets = column?.getFacetedUniqueValues();
 	const selectedValues = new Set(column?.getFilterValue() as string[]);
 	const [currRoleState, setcurrRoleState] = useRecoilState(globalRoleFilter);
+	const [currExperienceState, setcurrExperienceState] = useRecoilState(
+		globalExperienceFilter,
+	);
 
 	React.useEffect(() => {
-		if (title === "Role" && currRoleState) {
-			selectedValues.add(currRoleState);
-			const filterValues = Array.from(selectedValues);
-			column?.setFilterValue(filterValues.length ? filterValues : undefined);
+		if (currRoleState && currExperienceState) {
+			if (title === "Role") {
+				selectedValues.add(currRoleState);
+				const filterValues = Array.from(selectedValues);
+				column?.setFilterValue(filterValues.length ? filterValues : undefined);
+			}
+			if (title === "Experience") {
+				selectedValues.add(currExperienceState);
+				const filterValues = Array.from(selectedValues);
+				column?.setFilterValue(filterValues.length ? filterValues : undefined);
+			}
+		} else {
+			if (title === "Role" && currRoleState) {
+				selectedValues.add(currRoleState);
+				const filterValues = Array.from(selectedValues);
+				column?.setFilterValue(filterValues.length ? filterValues : undefined);
+			}
+			if (title === "Experience" && currExperienceState) {
+				selectedValues.add(currExperienceState);
+				const filterValues = Array.from(selectedValues);
+				column?.setFilterValue(filterValues.length ? filterValues : undefined);
+			}
 		}
 	}, []);
 

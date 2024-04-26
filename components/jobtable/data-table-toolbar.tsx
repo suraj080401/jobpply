@@ -8,6 +8,8 @@ import { Input } from "../ui/input";
 import { DataTableViewOptions } from "./data-table-view-options";
 import { DataTableFacetedFilter } from "./data-table-faceted-filter";
 import { allExperienceData, allJobRoleData } from "@/utils/data";
+import { useRecoilState } from "recoil";
+import { globalExperienceFilter, globalRoleFilter } from "@/atoms/atoms";
 
 interface DataTableToolbarProps<TData> {
 	table: Table<TData>;
@@ -17,7 +19,10 @@ export function DataTableToolbar<TData>({
 	table,
 }: DataTableToolbarProps<TData>) {
 	const isFiltered = table.getState().columnFilters.length > 0;
-
+	const [currRoleState, setcurrRoleState] = useRecoilState(globalRoleFilter);
+	const [currExperienceState, setcurrExperienceState] = useRecoilState(
+		globalExperienceFilter,
+	);
 	return (
 		<div className="flex items-center justify-between bg-mydarkblue bg-opacity-10 p-4 rounded-md space-x-2">
 			<div className="flex md:flex-row flex-col md:items-center md:space-x-2 md:space-y-0 space-y-2 w-full">
@@ -46,7 +51,11 @@ export function DataTableToolbar<TData>({
 				{isFiltered && (
 					<Button
 						variant="ghost"
-						onClick={() => table.resetColumnFilters()}
+						onClick={() => {
+							table.resetColumnFilters();
+							setcurrRoleState("");
+							setcurrExperienceState("");
+						}}
 						className="h-8 px-2 lg:px-3"
 					>
 						Reset

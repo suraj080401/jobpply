@@ -1,6 +1,6 @@
 "use client";
 
-import { globalRoleFilter } from "@/atoms/atoms";
+import { globalExperienceFilter, globalRoleFilter } from "@/atoms/atoms";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
@@ -18,10 +18,14 @@ const PopularJobCard: React.FC<IPopularJobCard> = ({
 }) => {
 	const [isHovered, setIsHovered] = useState<boolean>(false);
 	const [currRoleState, setcurrRoleState] = useRecoilState(globalRoleFilter);
+	const [currExperienceState, setcurrExperienceState] = useRecoilState(
+		globalExperienceFilter,
+	);
 	const router = useRouter();
 
 	const visitJobTab = () => {
 		setcurrRoleState(title);
+		setcurrExperienceState("");
 		router.push("/jobs");
 	};
 
