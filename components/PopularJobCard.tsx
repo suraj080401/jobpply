@@ -9,12 +9,14 @@ interface IPopularJobCard {
 	title: string;
 	logo: React.ComponentType<any>;
 	count: number;
+	keyvalue: string;
 }
 
 const PopularJobCard: React.FC<IPopularJobCard> = ({
 	title,
 	logo: Component,
 	count,
+	keyvalue,
 }) => {
 	const [isHovered, setIsHovered] = useState<boolean>(false);
 	const [currRoleState, setcurrRoleState] = useRecoilState(globalRoleFilter);
@@ -24,7 +26,8 @@ const PopularJobCard: React.FC<IPopularJobCard> = ({
 	const router = useRouter();
 
 	const visitJobTab = () => {
-		setcurrRoleState(title);
+		console.log(keyvalue);
+		setcurrRoleState(keyvalue);
 		setcurrExperienceState("");
 		router.push("/jobs");
 	};

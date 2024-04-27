@@ -29,27 +29,37 @@ const PopularJobs: React.FC = () => {
 					title={"Frontend Developer"}
 					logo={PiCodeBlockThin}
 					count={23}
+					keyvalue="fd"
 				/>
 				<PopularJobCard
 					title={"Backend Developer"}
 					logo={PiCloudCheckLight}
 					count={12}
+					keyvalue="bd"
 				/>
 				<PopularJobCard
 					title={"Fullstack Developer"}
 					logo={PiPresentationChartThin}
 					count={43}
+					keyvalue="fsd"
 				/>
-				<PopularJobCard title={"Data Analyst"} logo={PiGraphThin} count={14} />
 				<PopularJobCard
 					title={"Application Developer"}
 					logo={PiAndroidLogoThin}
 					count={16}
+					keyvalue="ad"
+				/>
+				<PopularJobCard
+					title={"Software Engineer"}
+					logo={PiGraphThin}
+					count={14}
+					keyvalue="se"
 				/>
 				<PopularJobCard
 					title={"Data Science"}
 					logo={PiUserFocusThin}
 					count={11}
+					keyvalue="ds"
 				/>
 			</div>
 			<Separator />

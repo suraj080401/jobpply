@@ -32,7 +32,7 @@ const SelectorComp: React.FC<ISelectorComp> = ({
 			<SelectContent>
 				{data.map((item, i) => {
 					return (
-						<SelectItem value={item.value} key={i}>
+						<SelectItem value={item.key} key={i}>
 							{item.value}
 						</SelectItem>
 					);
