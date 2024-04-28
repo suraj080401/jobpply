@@ -6,7 +6,10 @@ import { Table } from "@tanstack/react-table";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { DataTableViewOptions } from "./data-table-view-options";
-import { DataTableFacetedFilter } from "./data-table-faceted-filter";
+import {
+	DataTableFacetedFilterExperience,
+	DataTableFacetedFilterRole,
+} from "./data-table-faceted-filter";
 import { allExperienceData, allJobRoleData } from "@/utils/data";
 import { useRecoilState } from "recoil";
 import { globalExperienceFilter, globalRoleFilter } from "@/atoms/atoms";
@@ -35,14 +38,14 @@ export function DataTableToolbar<TData>({
 					className="h-8 md:w-72 w-full"
 				/>
 				{table.getColumn("role") && (
-					<DataTableFacetedFilter
-						column={table.getColumn("role")}
+					<DataTableFacetedFilterRole
+						column={table.getColumn("category")}
 						title="Role"
 						options={allJobRoleData}
 					/>
 				)}
 				{table.getColumn("experience") && (
-					<DataTableFacetedFilter
+					<DataTableFacetedFilterExperience
 						column={table.getColumn("experience")}
 						title="Experience"
 						options={allExperienceData}

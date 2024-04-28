@@ -20,16 +20,27 @@ export const columns: ColumnDef<Jobs>[] = [
 		cell: (info) => info.getValue(),
 	},
 	{
+		accessorKey: "category",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Category" />
+		),
+		cell: ({ row }) => {
+			return <div className="flex">{row.getValue("category")}</div>;
+		},
+		filterFn: (row, id, value) => {
+			return value.includes(row.getValue("category"));
+		},
+		enableHiding: false,
+	},
+	{
 		accessorKey: "role",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Role" />
+			<DataTableColumnHeader column={column} title="Profile" />
 		),
 		cell: ({ row }) => {
 			return <div className="flex">{row.getValue("role")}</div>;
 		},
-		filterFn: (row, id, value) => {
-			return value.includes(row.getValue(id));
-		},
+
 		enableSorting: false,
 	},
 	{
@@ -98,5 +109,6 @@ export const columns: ColumnDef<Jobs>[] = [
 				</div>
 			);
 		},
+		enableHiding: false,
 	},
 ];
