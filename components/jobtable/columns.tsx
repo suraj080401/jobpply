@@ -8,9 +8,9 @@ import Link from "next/link";
 export const columns: ColumnDef<Jobs>[] = [
 	{
 		accessorFn: (row) => (
-			<div className="flex flex-row items-center space-x-2 w-24">
+			<div className="flex flex-row items-center space-x-2 w-36">
 				<div>
-					<img src={`${row.logo}`} className="w-6 h-6" alt="logo" />
+					<img src={`${row.logo}`} className="w-full h-8" alt="logo" />
 				</div>
 				<div>{row.company}</div>
 			</div>
@@ -38,7 +38,7 @@ export const columns: ColumnDef<Jobs>[] = [
 			<DataTableColumnHeader column={column} title="Profile" />
 		),
 		cell: ({ row }) => {
-			return <div className="flex">{row.getValue("role")}</div>;
+			return <div className="flex w-36">{row.getValue("role")}</div>;
 		},
 
 		enableSorting: false,
@@ -59,7 +59,7 @@ export const columns: ColumnDef<Jobs>[] = [
 			<DataTableColumnHeader column={column} title="Experience" />
 		),
 		cell: ({ row }) => {
-			return <div className="flex">{row.getValue("experience")}</div>;
+			return <div className="flex w-24">{row.getValue("experience")}</div>;
 		},
 		filterFn: (row, id, value) => {
 			return value.includes(row.getValue(id));
@@ -72,7 +72,7 @@ export const columns: ColumnDef<Jobs>[] = [
 			<DataTableColumnHeader column={column} title="Skills" />
 		),
 		cell: ({ row }) => {
-			return <div className="flex">{row.getValue("skills")}</div>;
+			return <div className="flex w-72">{row.getValue("skills")}</div>;
 		},
 		enableSorting: false,
 	},

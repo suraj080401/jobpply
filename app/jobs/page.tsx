@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { Jobs } from "@/utils/schema";
 import { useQuery } from "@tanstack/react-query";
+import TableSkeleton from "@/components/Skeloten/TableSkeleton";
 
 export default function Jobs() {
 	const [currNavTabState, setCurrNavTabState] = useRecoilState(currNavTabAtom);
@@ -42,7 +43,9 @@ export default function Jobs() {
 				</div>
 			</div>
 			{isLoading ? (
-				<div>Loading...</div>
+				<div>
+					<TableSkeleton />
+				</div>
 			) : isError ? (
 				<div>Error fetching data</div>
 			) : (
