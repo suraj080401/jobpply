@@ -3,7 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Jobs } from "@/utils/schema";
 import { DataTableColumnHeader } from "./data-table-column-header";
-import { Button } from "../ui/button";
+import Link from "next/link";
 
 export const columns: ColumnDef<Jobs>[] = [
 	{
@@ -103,9 +103,12 @@ export const columns: ColumnDef<Jobs>[] = [
 		cell: ({ row }) => {
 			return (
 				<div className="flex">
-					<button className="bg-mydarkblue py-1 px-4 hover:bg-mycontrast text-white rounded-md">
+					<Link
+						href={`job/?id=${row.getValue("id")}`}
+						className="bg-mydarkblue py-1 px-4 hover:bg-mycontrast text-white rounded-md"
+					>
 						View
-					</button>
+					</Link>
 				</div>
 			);
 		},

@@ -54,6 +54,7 @@ const IOurServices = z.object({
 export type ourServices = z.infer<typeof IOurServices>;
 
 export const jobSchema = z.object({
+	id: z.string(),
 	logo: z.string(),
 	company: z.string(),
 	role: z.string(),

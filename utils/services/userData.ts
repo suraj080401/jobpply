@@ -12,3 +12,16 @@ export async function fetchData() {
 		throw error;
 	}
 }
+
+export async function fetchJobData() {
+	try {
+		const { data, error } = await supabase.from("joblist").select("*");
+		if (error) {
+			throw error;
+		}
+		return data || [];
+	} catch (error: any) {
+		console.error("Error fetching data:", error.message);
+		throw error;
+	}
+}
