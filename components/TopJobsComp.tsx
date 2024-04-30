@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
 	Carousel,
@@ -6,11 +7,28 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "./ui/carousel";
-import { topTenJobsData } from "@/utils/data";
 import TopJobCard from "./TopJobCard";
 import { Separator } from "./ui/separator";
+import { fetchTopJobData } from "@/utils/services/userData";
+import { useQuery } from "@tanstack/react-query";
+import TopJobSkeleton from "./Skeloten/TopJobSkeleton";
 
 const TopJobsComp: React.FC = () => {
+	const fetchTopJobs = async () => {
+		try {
+			const fetchedData = await fetchTopJobData();
+			console.log(fetchedData);
+			return fetchedData;
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const { data, isError, isLoading, error } = useQuery({
+		queryKey: ["topjobs"],
+		queryFn: fetchTopJobs,
+	});
+
 	return (
 		<div className="flex flex-col md:px-16 px-8 ">
 			<div className="flex flex-col items-center md:px-16 px-8 md:space-y-16 space-y-8">
@@ -26,27 +44,24 @@ const TopJobsComp: React.FC = () => {
 				</div>
 			</div>
 			<div className="p-8">
-				<Carousel className="w-full">
-					<CarouselContent className="-ml-1">
-						{topTenJobsData.map((item, index) => (
-							<CarouselItem
-								key={index}
-								className="pl-1 lg:basis-1/3 md:basis-1/2"
-							>
-								<TopJobCard
-									role={item.role}
-									location={item.location}
-									salary={item.salary}
-									keywords={item.keywords}
-									company={item.company}
-									logoURL={item.logoURL}
-								/>
-							</CarouselItem>
-						))}
-					</CarouselContent>
-					<CarouselPrevious />
-					<CarouselNext />
-				</Carousel>
+				{isLoading ? (
+					<TopJobSkeleton />
+				) : (
+					<Carousel className="w-full">
+						<CarouselContent className="-ml-1">
+							{data?.map((item, index) => (
+								<CarouselItem
+									key={index}
+									className="pl-1 lg:basis-1/3 md:basis-1/2"
+								>
+									<TopJobCard data={item} />
+								</CarouselItem>
+							))}
+						</CarouselContent>
+						<CarouselPrevious />
+						<CarouselNext />
+					</Carousel>
+				)}
 			</div>
 			<Separator className="my-2" />
 		</div>

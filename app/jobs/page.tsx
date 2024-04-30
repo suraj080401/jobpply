@@ -2,12 +2,29 @@
 import { currNavTabAtom } from "@/atoms/atoms";
 import { columns } from "@/components/jobtable/columns";
 import { DataTable } from "@/components/jobtable/data-table";
-import { allJobsData } from "@/utils/data";
+import { fetchJobData } from "@/utils/services/userData";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
+import { Jobs } from "@/utils/schema";
+import { useQuery } from "@tanstack/react-query";
+import TableSkeleton from "@/components/Skeloten/TableSkeleton";
 
 export default function Jobs() {
 	const [currNavTabState, setCurrNavTabState] = useRecoilState(currNavTabAtom);
+
+	const fetchAllJobs = async () => {
+		try {
+			const fetchedData = await fetchJobData();
+			return fetchedData;
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const { data, isError, isLoading, error } = useQuery({
+		queryKey: ["jobs"],
+		queryFn: fetchAllJobs,
+	});
 
 	useEffect(() => {
 		setCurrNavTabState("job");
@@ -25,7 +42,17 @@ export default function Jobs() {
 					</p>
 				</div>
 			</div>
-			<DataTable data={allJobsData} columns={columns} />
+			{isLoading ? (
+				<div>
+					<TableSkeleton />
+				</div>
+			) : isError ? (
+				<div className="flex items-center justify-center h-96">
+					<p className="text-red-500">Error fetching data {`- ${error}`}</p>
+				</div>
+			) : (
+				<DataTable data={data || []} columns={columns} />
+			)}
 		</main>
 	);
 }
