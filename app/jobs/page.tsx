@@ -21,7 +21,7 @@ export default function Jobs() {
 		}
 	};
 
-	const { data, isError, isLoading } = useQuery({
+	const { data, isError, isLoading, error } = useQuery({
 		queryKey: ["jobs"],
 		queryFn: fetchAllJobs,
 	});
@@ -47,7 +47,9 @@ export default function Jobs() {
 					<TableSkeleton />
 				</div>
 			) : isError ? (
-				<div>Error fetching data</div>
+				<div className="flex items-center justify-center h-96">
+					<p className="text-red-500">Error fetching data {`- ${error}`}</p>
+				</div>
 			) : (
 				<DataTable data={data || []} columns={columns} />
 			)}

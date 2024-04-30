@@ -2,7 +2,7 @@ import { atom } from "recoil";
 
 export const currNavTabAtom = atom<string>({
 	key: "currNavTabState",
-	default: "home",
+	default: "",
 });
 
 export const globalRoleFilter = atom<string>({
