@@ -1,4 +1,3 @@
-import { Jobs } from "../schema";
 import supabase from "../supabaseClient";
 
 export async function fetchData() {
@@ -17,6 +16,23 @@ export async function fetchData() {
 export async function fetchJobData() {
 	try {
 		const { data, error } = await supabase.from("joblist").select("*");
+		if (error) {
+			throw error;
+		}
+		return data || [];
+	} catch (error: any) {
+		console.error("Error fetching data:", error.message);
+		throw error;
+	}
+}
+
+export async function fetchTopJobData() {
+	try {
+		const { data, error } = await supabase
+			.from("joblist")
+			.select("*")
+			.order("created_at", { ascending: false })
+			.limit(10);
 		if (error) {
 			throw error;
 		}

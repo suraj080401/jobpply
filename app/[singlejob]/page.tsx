@@ -33,7 +33,7 @@ export default function page() {
 	});
 
 	return (
-		<div>
+		<div className="p-4 bg-white m-4 rounded-lg">
 			<SingleJob data={data} isError={isError} isLoading={isLoading} />
 		</div>
 	);
