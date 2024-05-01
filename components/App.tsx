@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { fetchData } from "../utils/services/userData";
+import { fetchData } from "../utils/services/supabaseData";
 import Home from "./componentroutes/HomeComp";
 
 const App = () => {

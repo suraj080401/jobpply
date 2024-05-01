@@ -9,7 +9,7 @@ import {
 } from "./ui/carousel";
 import TopJobCard from "./TopJobCard";
 import { Separator } from "./ui/separator";
-import { fetchTopJobData } from "@/utils/services/userData";
+import { fetchTopJobData } from "@/utils/services/supabaseData";
 import { useQuery } from "@tanstack/react-query";
 import TopJobSkeleton from "./Skeloten/TopJobSkeleton";
 

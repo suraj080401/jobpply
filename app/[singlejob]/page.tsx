@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { fetchSingleJobData } from "@/utils/services/userData";
+import { fetchSingleJobData } from "@/utils/services/supabaseData";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { currNavTabAtom } from "@/atoms/atoms";
