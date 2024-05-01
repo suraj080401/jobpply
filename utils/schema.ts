@@ -64,6 +64,7 @@ export const jobSchema = z.object({
 	salary: z.string(),
 	dateadded: z.string(),
 	category: z.string(),
+	link: z.string(),
 });
 
 export type Jobs = z.infer<typeof jobSchema>;

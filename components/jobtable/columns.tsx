@@ -38,7 +38,7 @@ export const columns: ColumnDef<Jobs>[] = [
 			<DataTableColumnHeader column={column} title="Profile" />
 		),
 		cell: ({ row }) => {
-			return <div className="flex w-36">{row.getValue("role")}</div>;
+			return <div className="flex w-42">{row.getValue("role")}</div>;
 		},
 
 		enableSorting: false,
@@ -113,5 +113,6 @@ export const columns: ColumnDef<Jobs>[] = [
 			);
 		},
 		enableHiding: false,
+		enableSorting: false,
 	},
 ];

@@ -15,7 +15,10 @@ export async function fetchData() {
 
 export async function fetchJobData() {
 	try {
-		const { data, error } = await supabase.from("joblist").select("*");
+		const { data, error } = await supabase
+			.from("joblist")
+			.select("*")
+			.order("created_at", { ascending: false });
 		if (error) {
 			throw error;
 		}
