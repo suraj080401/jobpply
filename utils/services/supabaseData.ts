@@ -62,3 +62,16 @@ export async function fetchSingleJobData(id: string) {
 		throw error;
 	}
 }
+
+export async function fetchCategoryCounts() {
+	try {
+		const { data, error } = await supabase.rpc("category_count_with_totals");
+		if (error) {
+			throw error;
+		}
+		console.log(data);
+		return data;
+	} catch (error: any) {
+		console.error("Error fetching data:", error.message);
+	}
+}
