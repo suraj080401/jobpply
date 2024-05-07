@@ -86,12 +86,14 @@ export const columns: ColumnDef<Jobs>[] = [
 		},
 	},
 	{
-		accessorKey: "dateadded",
+		accessorKey: "created_at",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Date Added" />
 		),
 		cell: ({ row }) => {
-			return <div className="flex">{row.getValue("dateadded")}</div>;
+			return (
+				<div className="flex">{formatDate(row.getValue("created_at"))}</div>
+			);
 		},
 		enableSorting: false,
 	},
@@ -116,3 +118,11 @@ export const columns: ColumnDef<Jobs>[] = [
 		enableSorting: false,
 	},
 ];
+
+function formatDate(data: string) {
+	const date = new Date(data);
+	const year = date.getFullYear();
+	const month = String(date.getMonth() + 1).padStart(2, "0"); // Month is zero-based
+	const day = String(date.getDate()).padStart(2, "0");
+	return `${year}-${month}-${day}`;
+}
