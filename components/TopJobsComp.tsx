@@ -12,6 +12,7 @@ import { Separator } from "./ui/separator";
 import { fetchTopJobData } from "@/utils/services/supabaseData";
 import { useQuery } from "@tanstack/react-query";
 import TopJobSkeleton from "./Skeloten/SkeletonContainer";
+import { memo } from "react";
 
 const TopJobsComp: React.FC = () => {
 	const fetchTopJobs = async () => {
@@ -67,4 +68,4 @@ const TopJobsComp: React.FC = () => {
 	);
 };
 
-export default TopJobsComp;
+export default memo(TopJobsComp);

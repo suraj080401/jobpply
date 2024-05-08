@@ -10,6 +10,7 @@ import {
 import { CiLocationOn } from "react-icons/ci";
 import { TfiCup } from "react-icons/tfi";
 import { Separator } from "./ui/separator";
+import { memo } from "react";
 
 const HackathonsList: React.FC = () => {
 	return (
@@ -78,4 +79,4 @@ const HackathonsList: React.FC = () => {
 	);
 };
 
-export default HackathonsList;
+export default memo(HackathonsList);

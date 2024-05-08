@@ -10,6 +10,7 @@ import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Input } from "@/components/ui/input";
+import { memo } from "react";
 
 const righteous = Righteous({ subsets: ["latin"], weight: ["400"] });
 
@@ -110,4 +111,4 @@ const Footer: React.FC = () => {
 	);
 };
 
-export default Footer;
+export default memo(Footer);

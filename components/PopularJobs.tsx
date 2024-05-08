@@ -13,6 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchCategoryCounts } from "@/utils/services/supabaseData";
 import TopJobSkeleton from "./Skeloten/SkeletonContainer";
 import { Skeleton } from "./ui/skeleton";
+import { memo } from "react";
 
 const PopularJobs: React.FC = () => {
 	const fetchCount = async () => {
@@ -99,4 +100,4 @@ const PopularJobs: React.FC = () => {
 	);
 };
 
-export default PopularJobs;
+export default memo(PopularJobs);
