@@ -10,7 +10,7 @@ export const columns: ColumnDef<Jobs>[] = [
 		accessorFn: (row) => (
 			<div className="flex flex-row items-center space-x-2 w-36">
 				<div>
-					<img src={`${row.logo}`} className="w-full h-8" alt="logo" />
+					<img src={`${row.logo}`} className="w-8 h-auto" alt="logo" />
 				</div>
 				<div>{row.company}</div>
 			</div>
