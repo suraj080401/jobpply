@@ -2,7 +2,7 @@
 import { currNavTabAtom } from "@/atoms/atoms";
 import { columns } from "@/components/jobtable/columns";
 import { DataTable } from "@/components/jobtable/data-table";
-import { fetchJobData } from "@/utils/services/userData";
+import { fetchJobData } from "@/utils/services/supabaseData";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { Jobs } from "@/utils/schema";

@@ -15,7 +15,10 @@ export async function fetchData() {
 
 export async function fetchJobData() {
 	try {
-		const { data, error } = await supabase.from("joblist").select("*");
+		const { data, error } = await supabase
+			.from("joblist")
+			.select("*")
+			.order("created_at", { ascending: false });
 		if (error) {
 			throw error;
 		}
@@ -57,5 +60,18 @@ export async function fetchSingleJobData(id: string) {
 	} catch (error: any) {
 		console.error("Error fetching data:", error.message);
 		throw error;
+	}
+}
+
+export async function fetchCategoryCounts() {
+	try {
+		const { data, error } = await supabase.rpc("category_count_with_totals");
+		if (error) {
+			throw error;
+		}
+		console.log(data);
+		return data;
+	} catch (error: any) {
+		console.error("Error fetching data:", error.message);
 	}
 }

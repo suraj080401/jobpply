@@ -6,6 +6,7 @@ import { Separator } from "./ui/separator";
 import { useRecoilState } from "recoil";
 import { globalExperienceFilter, globalRoleFilter } from "@/atoms/atoms";
 import { useRouter } from "next/navigation";
+import { memo } from "react";
 
 const Jumbotron: React.FC = () => {
 	const [filterRole, setfilterRole] = useState("");
@@ -58,4 +59,4 @@ const Jumbotron: React.FC = () => {
 	);
 };
 
-export default Jumbotron;
+export default memo(Jumbotron);

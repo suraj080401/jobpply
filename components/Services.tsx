@@ -2,6 +2,7 @@ import React from "react";
 import ServiceCard from "./ServiceCard";
 import { ourServiceData } from "@/utils/data";
 import { Separator } from "./ui/separator";
+import { memo } from "react";
 
 const Services: React.FC = () => {
 	return (
@@ -19,4 +20,4 @@ const Services: React.FC = () => {
 	);
 };
 
-export default Services;
+export default memo(Services);

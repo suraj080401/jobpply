@@ -10,7 +10,7 @@ export const columns: ColumnDef<Jobs>[] = [
 		accessorFn: (row) => (
 			<div className="flex flex-row items-center space-x-2 w-36">
 				<div>
-					<img src={`${row.logo}`} className="w-full h-8" alt="logo" />
+					<img src={`${row.logo}`} className="w-8 h-auto" alt="logo" />
 				</div>
 				<div>{row.company}</div>
 			</div>
@@ -38,7 +38,7 @@ export const columns: ColumnDef<Jobs>[] = [
 			<DataTableColumnHeader column={column} title="Profile" />
 		),
 		cell: ({ row }) => {
-			return <div className="flex w-36">{row.getValue("role")}</div>;
+			return <div className="flex w-42">{row.getValue("role")}</div>;
 		},
 
 		enableSorting: false,
@@ -86,12 +86,14 @@ export const columns: ColumnDef<Jobs>[] = [
 		},
 	},
 	{
-		accessorKey: "dateadded",
+		accessorKey: "created_at",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Date Added" />
 		),
 		cell: ({ row }) => {
-			return <div className="flex">{row.getValue("dateadded")}</div>;
+			return (
+				<div className="flex">{formatDate(row.getValue("created_at"))}</div>
+			);
 		},
 		enableSorting: false,
 	},
@@ -113,5 +115,14 @@ export const columns: ColumnDef<Jobs>[] = [
 			);
 		},
 		enableHiding: false,
+		enableSorting: false,
 	},
 ];
+
+function formatDate(data: string) {
+	const date = new Date(data);
+	const year = date.getFullYear();
+	const month = String(date.getMonth() + 1).padStart(2, "0"); // Month is zero-based
+	const day = String(date.getDate()).padStart(2, "0");
+	return `${year}-${month}-${day}`;
+}

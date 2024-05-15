@@ -9,15 +9,15 @@ import {
 } from "./ui/carousel";
 import TopJobCard from "./TopJobCard";
 import { Separator } from "./ui/separator";
-import { fetchTopJobData } from "@/utils/services/userData";
+import { fetchTopJobData } from "@/utils/services/supabaseData";
 import { useQuery } from "@tanstack/react-query";
-import TopJobSkeleton from "./Skeloten/TopJobSkeleton";
+import TopJobSkeleton from "./Skeloten/SkeletonContainer";
+import { memo } from "react";
 
 const TopJobsComp: React.FC = () => {
 	const fetchTopJobs = async () => {
 		try {
 			const fetchedData = await fetchTopJobData();
-			console.log(fetchedData);
 			return fetchedData;
 		} catch (error) {
 			console.log(error);
@@ -68,4 +68,4 @@ const TopJobsComp: React.FC = () => {
 	);
 };
 
-export default TopJobsComp;
+export default memo(TopJobsComp);
