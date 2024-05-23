@@ -1,3 +1,4 @@
+import { IreferralData } from "../schema";
 import supabase from "../supabaseClient";
 
 export async function fetchData() {
@@ -73,5 +74,25 @@ export async function fetchCategoryCounts() {
 		return data;
 	} catch (error: any) {
 		console.error("Error fetching data:", error.message);
+	}
+}
+
+export async function fetchCompanyReferrals(
+	query: string,
+): Promise<IreferralData[]> {
+	try {
+		const { data, error } = await supabase
+			.from("referrals")
+			.select("*")
+			.eq("company", query);
+
+		if (error) {
+			throw error;
+		}
+
+		return data ?? [];
+	} catch (error: any) {
+		console.error("Error fetching data:", error.message);
+		throw new Error(error.message);
 	}
 }

@@ -6,6 +6,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { HiOutlineCurrencyRupee } from "react-icons/hi";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import SingleJobSkeleton from "./Skeloten/SingleJobSkeleton";
 
 interface SingleJobProps {
 	data: Jobs | undefined;
@@ -15,7 +16,11 @@ interface SingleJobProps {
 
 const SingleJob: React.FC<SingleJobProps> = ({ data, isLoading, isError }) => {
 	if (isLoading) {
-		return <div>Loading...</div>;
+		return (
+			<div className="md:p-8 p-2">
+				<SingleJobSkeleton />
+			</div>
+		);
 	}
 
 	if (isError) {
@@ -51,6 +56,12 @@ const SingleJob: React.FC<SingleJobProps> = ({ data, isLoading, isError }) => {
 									<CiLocationOn />
 								</div>
 								<div>{data.location}</div>
+							</div>
+							<div className="flex flex-row items-center space-x-1 bg-gray-500 bg-opacity-10 rounded-md px-2 text-gray-500">
+								<div className="text-md">
+									<CiLocationOn />
+								</div>
+								<div>{data.experience}</div>
 							</div>
 						</div>
 						<div className="flex flex-row space-x-2">

@@ -72,3 +72,12 @@ export const jobSchema = z.object({
 });
 
 export type Jobs = z.infer<typeof jobSchema>;
+
+const referralData = z.object({
+	id: z.number(),
+	name: z.string(),
+	linkedin: z.string(),
+	company: z.string(),
+});
+
+export type IreferralData = z.infer<typeof referralData>;

@@ -21,7 +21,9 @@ const BulletPoints: React.FC<BulletPointsProps> = ({ data, title }) => {
 			{title === "Skills" ? (
 				<div className="flex flex-col">
 					<div>
-						<p className="md:text-lg text-md font-bold">{title}</p>
+						<p className="md:text-lg text-sm underline font-bold">
+							Add these skills in resume
+						</p>
 					</div>
 					<div className="flex flex-row flex-wrap">
 						{data.map((item, i) => {
