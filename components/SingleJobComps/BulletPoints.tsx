@@ -27,15 +27,10 @@ const BulletPoints: React.FC<BulletPointsProps> = ({ data, title }) => {
 					</div>
 					<div className="flex flex-row flex-wrap">
 						{data.map((item, i) => {
-							const randomColor = generateRandomHexColor();
 							return (
 								<p
 									key={i}
-									style={{
-										backgroundColor: `${randomColor}3`,
-										color: randomColor,
-									}}
-									className={`px-2 py-1 rounded-xl my-2 mr-2 md:text-sm text-xs bg-opacity-20`}
+									className={`bg-mydarkblue px-2 py-1 rounded-xl my-2 mr-2 md:text-sm text-xs bg-opacity-20`}
 								>
 									{item}
 								</p>

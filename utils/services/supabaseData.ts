@@ -77,20 +77,26 @@ export async function fetchCategoryCounts() {
 	}
 }
 
+interface rederralCode {
+	company: string;
+	code: string;
+}
+
 export async function fetchCompanyReferrals(
 	query: string,
-): Promise<IreferralData[]> {
+): Promise<string | null> {
 	try {
 		const { data, error } = await supabase
-			.from("referrals")
-			.select("*")
-			.eq("company", query);
+			.from("linkedincompanycodes")
+			.select("code")
+			.eq("company", query)
+			.single();
 
 		if (error) {
 			throw error;
 		}
 
-		return data ?? [];
+		return data?.code || null;
 	} catch (error: any) {
 		console.error("Error fetching data:", error.message);
 		throw new Error(error.message);

@@ -4,7 +4,7 @@ import { Jobs } from "@/utils/schema";
 import BulletPoints from "./SingleJobComps/BulletPoints";
 import { useQuery } from "@tanstack/react-query";
 import { fetchCompanyReferrals } from "@/utils/services/supabaseData";
-import { FaLinkedin } from "react-icons/fa";
+import { FiLink } from "react-icons/fi";
 
 interface SingleJobTabProps {
 	data: Jobs | undefined;
@@ -30,9 +30,9 @@ const SingleJobTabs: React.FC<SingleJobTabProps> = ({
 	};
 
 	const {
-		data: referralData,
-		isError: isRefferalError,
-		isLoading: isRefferalLoading,
+		data: referralCode,
+		isError: isRefferaCodelError,
+		isLoading: isRefferalCodeLoading,
 		error,
 	} = useQuery({
 		queryKey: [data?.company],
@@ -93,23 +93,36 @@ const SingleJobTabs: React.FC<SingleJobTabProps> = ({
 								</p>
 							</div>
 							<div className="flex flex-row flex-wrap">
-								{referralData?.map((item, i) => {
-									return (
-										<div
-											key={i}
-											className="flex flex-row mr-4 px-4 py-2 my-1 rounded-lg bg-mydarkblue bg-opacity-10"
-										>
-											<a
-												href={item.linkedin}
-												className="flex items-center"
-												target="_blank"
-											>
-												<FaLinkedin className="text-blue-700 text-lg mr-1" />
-												<div>{item.name}</div>
-											</a>
-										</div>
-									);
-								})}
+								<div className="flex flex-row mr-4 px-4 py-2 my-1 rounded-lg bg-mydarkblue bg-opacity-20 hover:bg-opacity-10">
+									<a
+										href={`https://www.linkedin.com/search/results/people/?currentCompany=%5B%${referralCode}%22%5D&keywords=Software%20Engineer&origin=FACETED_SEARCH`}
+										className="flex items-center"
+										target="_blank"
+									>
+										<FiLink className="text-blue-700 text-lg mr-1" />
+										<div>Software Engineers</div>
+									</a>
+								</div>
+								<div className="flex flex-row mr-4 px-4 py-2 my-1 rounded-lg bg-mydarkblue bg-opacity-20 hover:bg-opacity-10">
+									<a
+										href={`https://www.linkedin.com/search/results/people/?currentCompany=%5B%${referralCode}%22%5D&keywords=talent%20acquisition&origin=FACETED_SEARCH`}
+										className="flex items-center"
+										target="_blank"
+									>
+										<FiLink className="text-blue-700 text-lg mr-1" />
+										<div>Talent Acquisitions</div>
+									</a>
+								</div>
+								<div className="flex flex-row mr-4 px-4 py-2 my-1 rounded-lg bg-mydarkblue bg-opacity-20 hover:bg-opacity-10">
+									<a
+										href={`https://www.linkedin.com/search/results/people/?currentCompany=%5B%${referralCode}%22%5D&keywords=hiring%20manager&origin=FACETED_SEARCH`}
+										className="flex items-center"
+										target="_blank"
+									>
+										<FiLink className="text-blue-700 text-lg mr-1" />
+										<div>Hiring Managers</div>
+									</a>
+								</div>
 							</div>
 							<div className="text-xs text-green-500 underline hover:cursor-pointer">
 								What to message these employees?
