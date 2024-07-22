@@ -1,13 +1,19 @@
 "use client";
-import App from "@/components/App";
-import { RecoilRoot } from "recoil";
+
+import { currNavTabAtom } from "@/atoms/atoms";
+import HomeComp from "@/components/componentroutes/HomeComp";
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
 
 export default function Home() {
+	const [currNavTabState, setCurrNavTabState] = useRecoilState(currNavTabAtom);
+
+	useEffect(() => {
+		setCurrNavTabState("home");
+	}, []);
 	return (
-		<RecoilRoot>
-			<main className="">
-				<App />
-			</main>
-		</RecoilRoot>
+		<main className="flex-grow h-full scroll-smooth">
+			<HomeComp />
+		</main>
 	);
 }
