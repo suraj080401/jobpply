@@ -1,7 +1,7 @@
 "use client";
 
 import { currNavTabAtom } from "@/atoms/atoms";
-import HomeComp from "@/components/componentroutes/HomeComp";
+import HomeComp from "@/components/ComponentRoutes/HomeComp";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 
